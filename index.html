@@ -1,34 +1,87 @@
 <!DOCTYPE html>
-<html lang:sv>
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="styles.css">
+
     <title>Ethereal Studios</title>
+    <!--Importerade fonter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Xanh+Mono:ital@0;1&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <nav>
-        <div class="logo">Etheral Studios</div>
-        <div class="hamburger" id="hamburger"></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Startsida</a></li>
-            <li><a href="about.html">Om oss</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-            <li><a href="report.html">Redovisning</a></li>
-        </ul>
+        <!-- Navigationsfältet -->
+        <input type="checkbox" id="sidebar-active">
+        <!-- Dold checkbox för att hantera visning av sidomenyn -->
+        <label for="sidebar-active" class="open-sidebar-button">
+            <!-- Knapp för att öppna sidomenyn -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e3e3e3">
+                <!-- SVG-ikon för hamburgarmeny -->
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </label>
+
+        <div class="nav-links">
+            <!-- Behållare för navigationslänkar -->
+            <label for="sidebar-active" class="close-sidebar-button">
+                <!-- Knapp för att stänga sidomenyn -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e3e3e3">
+                    <!-- SVG-ikon för att stänga menyn -->
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </label>
+
+            <!-- Navigationslänkar -->
+            <a class="home-link" href="index.html">Startsida</a>
+            <a href="about.html">Om oss</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="report.html">Tillgänglighet</a>
+        </div>
     </nav>
-    <img
-    class="hero"
-    src="images/hero.jpg"
-    alt="hero bild" />  
+
+    <!--herobilden och text-->
+    <section class="hero-section">
+        <h1>Välkommen till Ethereal Studios</h1>
+        <h2>Vi skapar förtrollande gränssnitt tillsammans med dig </h2>
+    </section>
+
     <main>
-        <section>
-            <h2>Welcome to Ethereal Studios</h2>
-            <p>Here at Ethereal Studios we strive to create the best possible experience for our customers. We
-                offer a wide range of services, from web design to app development. Our team of experts will
-                help you with all your needs.</p>
-        </section>
+        <!-- Huvudinnehåll på sidan -->
+
+        <div class="grid-container">
+            <!-- Rutnätsbehållare för att organisera innehåll -->
+            <div class="card">
+                <!-- Textkort med information -->
+                <h3>Vi designar din vision</h3>
+                <p>Vi på Ethereal Studios strävar efter att skapa den bästa möjliga upplevelsen för våra kunder. Vi erbjuder en rad olika tjänser, från User Experince Design och interaktionsdesign till textproducering och illustrationer. Vårt team finns här för att hjälpa dig realisera din vision.</p>
+            </div>
+            <div class="image-container">
+                <!-- Behållare för bilder -->
+                <img class="image-item" src="images/kund1.png" alt="Customer Image">
+            </div>
+            <!--Bilden är tagen från Canva premium och mailpulerad med deras verktyg-->
+        </div>
+        <div class="grid-container">
+            <div class="image-container">
+                <img class="image-item" src="images/Konsultation.png" alt="Consultation Image">
+                <!--Bilden är tagen från Canva premium och mailpulerad med deras verktyg-->
+            </div>
+            <div class="card">
+                <h3>Tillgänglighet i design</h3>
+                <p>För oss spelar tillgänglighet en stor roll och vi utgår alltid från WCAG:s (Web Content Accessibility Guidlines) riktlinjer för att säkerställa en tillgänslighetsanpassad design. Detta för att så många som möjligt ska kunna ta del av det vi designar.</p>
+            </div>
+        </div>
     </main>
 </body>
+
+</html>

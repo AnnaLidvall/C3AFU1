@@ -1,11 +1,356 @@
-header {
-    background: rgba (30, 35, 50, 0.8);
-    backdrop-filter: blur(5px);
-    padding: fixed; 
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+body {
+    /* Bestämmer utseendet för hela sidan */
+    margin: 0;
+    /* Tar bort marginaler runt sidan */
+    background-color: #FFE8F0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1em;
+
+}
+
+nav {
+    /* Bestämmer utseendet för navigationsfältet */
+    height: 60px;
+    background-color: #FFF5EE;
     display: flex;
-    justify-content: space-between;
+    /* Använder Flexbox för layout */
+    justify-content: flex-end;
+    /* Placerar elementen till höger */
     align-items: center;
+
+}
+
+.nav-links {
+    /* Bestämmer hur länkarna placeras i navigationsfältet*/
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* Använder Flexbox för layout */
+    flex-direction: row;
+    /* Placerar elementen i en rad */
+    align-items: center;
+    /* Centrerar elementen vertikalt */
+}
+
+nav a {
+    /* Bestämmer utseendet för länkarna i navigationsfältet */
+    color: black;
+    font-size: 1.2em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100%;
+    /* Tar upp hela höjden i föräldern */
+    padding: 0 20px;
+    /* Lägger till utrymme inuti länkarna */
+    display: flex;
+    /* Använder Flexbox för layout */
+    align-items: center;
+    text-decoration: none;
+    /* Tar bort understrykning från länkar */
+}
+
+nav a:hover {
+    background-color: #8082f8;
+    /* Ändrar bakgrundsfärg vid hovring */
+    color: black;
+    text-shadow: #fff5ee 1px 1px 1px;
+    transition: 0.4s ease-in-out;
+}
+
+nav .home-link {
+    margin-right: auto;
+    /* Flyttar startsidelänken till vänster */
+}
+
+nav svg {
+    fill: #000C2E;
+    /* Färg för SVG-ikoner, alltså hamburgermenyn och "X" knappen  */
+}
+
+#sidebar-active {
+    display: none;
+    /* Gömmer checkboxen */
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
+    /* Gömmer knapparna för att öppna och stänga sidomenyn */
+}
+
+@media (max-width: 710px) {
+
+    /* Anpassar layouten för mindre skärmar */
+    .nav-links {
+        flex-direction: column;
+        /* Placerar elementen i en kolumn */
+        align-items: flex-start;
+        /* Placerar elementen längst upp till vänster */
+        position: fixed;
+        /* Fixerar elementet på sidan */
+        top: 0;
+        /* Placerar elementet längst upp på sidan */
+        right: -100%;
+        /* Flyttar elementet utanför synfältet */
+        z-index: 10;
+        /* Placerar elementet ovanför andra element */
+        width: 200px;
+        /* Anger bredden på elementet */
+        background-color: #FFD1DC;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        /* Lägger till skugga för att markera elementet */
+        transition: 0.5s ease-out;
+        /* Lägger till en övergångseffekt */
+    }
+
+   
+
+    nav a {
+        /* Bestämmer utseende för navigationen */
+        box-sizing: border-box;
+        /* Inkluderar padding och border i elementets totala bredd */
+        height: auto;
+        /* Tillåter höjden att anpassas efter innehållet */
+        width: 100%;
+        /* Tar upp hela bredden i föräldern */
+        padding: 20px 30px;
+        /* Lägger till utrymme inuti länkarna */
+        justify-content: flex-start;
+        /* Placerar texten längst upp till vänster */
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+        display: block;
+        /* Visar knapparna för att öppna och stänga sidomenyn */
+        padding: 20px;
+
+    }
+
+    #sidebar-active:checked~.nav-links {
+        right: 0;
+        /* Flyttar elementet in i synfältet när det är aktivt */
+    }
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/jason-leung-UMncYEfO9-U-unsplash.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 80%;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #FFE8F0;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+}
+
+
+
+main {
+    /* Bestämmer utseendet för main elementet*/
+    padding: 40px;
+    text-align: left;
+    font-size: 0.8rem;
+
+}
+
+* {
+    /* Bestämmer utseendet för hela sidan */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inkluderar padding och border i elementets totala bredd */
+}
+
+h1 {
+    /* Bestämmer utseendet för h1 rubriker på sidan */
+    color: #FFF5EE;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Londrina Shadow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+h2 {
+    /* Bestämmer utseendet för h2 rubriker på sidan */
+    color: #0D1F46;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 1.25rem;
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+h3 {
+    /* Bestämmer utseendet för h3 rubriker på sidan */
+    color: black;
+    font-size: 1.5em;
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    /* Bestämmer utseendet för paragrafer på sidan */
+    color:#0D1F46;
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+input {
+    /* Bestämmer utseendet för input elementet, där kunden kan skriva ex. email */
+    background-color: white;
+    width: 70%;
+    margin-left: 10%;
+    font-size: 1em;
+    padding: 16px;
+    border-radius: 10px;
+    border-color: #8082f8;
+    border-width: 4px;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+textarea {
+    /* Bestämmer utseende för textområdet, där kunden förklarar vad de behvöer hjälp med */
+    background-color: white;
+    width: 70%;
+    margin-left: 10%;
+    padding: 16px;
+    border-radius: 10px;
+    border-color: #8082f8;
+    border-width: 4px;
+    margin-bottom: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+
+}
+
+input:focus-within,
+textarea:focus-within {
+    /* Ändrar utseendet vid fokusering av de olika elementen i kontaktfomruläret */
+    outline: none;
+    /* Tar bort konturen när elementet är fokuserat */
+    border-color: #0D1F46;
+    /* Ändrar border färgen vid fokus */
+}
+
+button {
+    /*Bestämmer utseende för knappen i kontaktformuläret*/
+    background-color: #0D1F46;
+    color: #FFF5EE;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 8px 18px;
+    text-align: center;
+    display: flex;
+    /* Använder Flexbox för layout */
+    margin-left: 10%;
+    border-color: #8082f8;
+    border-width: 3px;
+
+}
+
+button:hover {
+    opacity: 60%;
+    /* Minskar genomskinligheten vid hovring */
+    cursor: pointer;
+    /* Ändrar muspekaren till en pekare */
+}
+
+.grid-container {
+    /* Bestämmer utseendet för grid-container där korten och bilderna presenteras */
+    display: grid;
+    /* Använder CSS Grid för layout för att presentera textinnehållet */
+    grid-template-columns: 1fr 1fr;
+    /* Skapar två lika stora kolumner */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image-container {
+    /* Bestämmer hur och vart bilderna visas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.image-item {
+    /*Bestämmer utseende runt om bilderna*/
+    display: flex;
+    /* Använder Flexbox för layout */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff5ee;
+    border-radius: 20px;
+
+}
+
+.card {
+    /*Bestämmer utseende för korten där information presenteras*/
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff5ee;
+    /* Bestämmer färg och bredd på borden */
+    border-radius: 20px;
+    /* Rundar av hörnen */
+    text-align: left;
+    font-size: 1.5em;
+    color: #0D1F46;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+.card p {
+    margin-bottom: 20px;
+    /* Lägger till mellanrum under varje stycke, istället för <br> element i HTML koden */
+}
+
+
+
+@media (max-width: 710px) {
+
+    /* Anpassar layouten för mindre skärmar via en brytpunkt */
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Ändrar till en kolumn */
+    }
 }
