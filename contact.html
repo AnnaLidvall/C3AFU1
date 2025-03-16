@@ -31,7 +31,8 @@
                 <!-- Knapp för att stänga sidomenyn -->
                 <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e3e3e3">
                     <!-- SVG-ikon för att stänga menyn -->
-                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                 </svg>
             </label>
 
@@ -47,19 +48,24 @@
         <!-- Huvudinnehåll på sidan -->
         <h2>Kontakta oss!</h2>
         <!-- Huvudrubrik för sidan -->
-        <form>
-            <!-- Formulär för att samla in användardata -->
-            <input type="text" name="first" placeholder="Förnamn" autocomplete="off" required>
-            <!-- Textfält för förnamn -->
-            <input type="text" name="last" placeholder="Efternamn" autocomplete="off" required>
-            <!-- Textfält för efternamn -->
-            <input type="email" name="email" placeholder="Email" autocomplete="off" required>
-            <!-- Textfält för e-postadress -->
-            <textarea rows="5" cols="60" name="message" placeholder="Vad kan vi hjälpa dig med?" autocomplete="off" required></textarea>
-            <!-- Textområde för meddelande -->
-            <button type="button">Skicka</button>
-            <!-- Knapp för att simulera formulärskickande -->
-        </form>
+
+        <div class="flex-container">
+            <form class="contact-form">
+                <!-- Formulär för att samla in användardata -->
+                <input type="text" name="first" placeholder="Förnamn" autocomplete="off" required>
+                <!-- Textfält för förnamn -->
+                <input type="text" name="last" placeholder="Efternamn" autocomplete="off" required>
+                <!-- Textfält för efternamn -->
+                <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+                <!-- Textfält för e-postadress -->
+                <textarea rows="5" cols="60" name="message" placeholder="Vad kan vi hjälpa dig med?" autocomplete="off"
+                    required></textarea>
+                <!-- Textområde för meddelande -->
+                <button type="submit" class="submit-button">Skicka</button>
+                <!-- Knapp för att simulera formulärskickande -->
+            </form>
+        </div>
+
     </main>
 </body>
 
