@@ -56,17 +56,16 @@ nav a {
     /* Tar bort understrykning från länkar */
 }
 
+nav a:first {
+    margin-right: auto;
+}
+
 nav a:hover {
     background-color: var(--yellow-color);
     /* Ändrar bakgrundsfärg vid hovring */
     color: black;
     text-shadow: var(--medium-color) 1px 1px 1px;
     transition: 0.4s ease-in-out;
-}
-
-nav .home-link {
-    margin-right: auto;
-    /* Flyttar startsidelänken till vänster */
 }
 
 nav svg {
