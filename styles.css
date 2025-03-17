@@ -195,6 +195,10 @@ footer p {
     /* Inkluderar padding och border i elementets totala bredd */
 }
 
+.contact-header {
+    color: #543dcb;
+}
+
 h1 {
     /* Bestämmer utseendet för h1 rubriker på sidan */
     color: var(--light-color);
@@ -249,6 +253,7 @@ a {
     text-decoration-style: wavy;
 
 }
+
 
 .contact-form {
     display: flex;
