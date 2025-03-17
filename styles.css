@@ -38,6 +38,10 @@ nav {
     /* Centrerar elementen vertikalt */
 }
 
+nav a:first-of-type {
+    margin-right: auto;
+}
+
 nav a {
     /* Bestämmer utseendet för länkarna i navigationsfältet */
     color: black;
@@ -54,10 +58,6 @@ nav a {
     align-items: center;
     text-decoration: none;
     /* Tar bort understrykning från länkar */
-}
-
-nav a:first {
-    margin-right: auto;
 }
 
 nav a:hover {
