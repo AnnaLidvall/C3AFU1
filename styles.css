@@ -5,6 +5,7 @@
     --dark-color: #543dcb;
     --yellow-color: #C9FF33;
 }
+
 body {
     /* Bestämmer utseendet för hela sidan */
     margin: 0;
@@ -109,7 +110,7 @@ nav svg {
         /* Lägger till en övergångseffekt */
     }
 
-   
+
 
     nav a {
         /* Bestämmer utseende för navigationen */
@@ -140,7 +141,8 @@ nav svg {
 }
 
 .hero-section {
-    background: url(images/bakgrund3.jpg);
+    background: url(images/unsplash.jpg);
+    /*bilden är tagen från unsplash.com under deras gratis bilder*/
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -150,13 +152,12 @@ nav svg {
 .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    
+
 }
 
 .hero-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: var(--dark-color);
 }
 
 .hero-section p {
@@ -174,6 +175,18 @@ main {
 
 }
 
+footer {
+    padding: 40px;
+    text-align: left;
+    font-size: 0.8rem;
+    background-color: #C9FF33;
+
+}
+
+footer p {
+    color: #543dcb;
+}
+
 * {
     /* Bestämmer utseendet för hela sidan */
     margin: 0;
@@ -184,17 +197,17 @@ main {
 
 h1 {
     /* Bestämmer utseendet för h1 rubriker på sidan */
-    color: var(--dark-color);
+    color: var(--light-color);
     padding: 20px;
     text-align: center;
     font-size: 3rem;
     font-family: "Londrina Shadow", sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-shadow: 3px 3px 3px var(--dark-color);
+    text-shadow: 2px 2px 2px var(--yellow-color);
     text-transform: uppercase;
-      
-      
+
+
 
 }
 
@@ -223,7 +236,7 @@ h3 {
 
 p {
     /* Bestämmer utseendet för paragrafer på sidan */
-    color:white;
+    color: white;
     font-size: 1em;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -289,6 +302,7 @@ textarea:focus-within {
 .submit-button {
     align-self: baseline;
 }
+
 button {
     /*Bestämmer utseende för knappen i kontaktformuläret*/
     background-color: var(--dark-color);
@@ -342,7 +356,7 @@ button:hover {
     margin: 20px;
     background-color: var(--dark-color);
     border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 }
 
@@ -360,7 +374,7 @@ button:hover {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 }
 
