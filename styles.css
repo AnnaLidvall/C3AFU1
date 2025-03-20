@@ -1,5 +1,5 @@
 :root {
-    /* Bestämmer färger som används på sidan */
+    /* Bestämmer färger som används på sidan, för att inte behöva kopiera in hex-kod */
     --light-color: #deff9d;
     --medium-color: #8b6aff;
     --dark-color: #543dcb;
@@ -34,16 +34,15 @@ nav {
     /* Använder Flexbox för layout */
     flex-direction: row;
     /* Placerar elementen i en rad */
-    align-items: center;
-    /* Centrerar elementen vertikalt */
 }
 
 nav a:first-of-type {
+    /* Placerar alla länkar förutom Startsidan åt höger, för att skilja sartsidan från övrig innehåll*/
     margin-right: auto;
 }
 
 nav a {
-    /* Bestämmer utseendet för länkarna i navigationsfältet */
+    /* Bestämmer utseendet för länkarna i navigationsmenyn */
     color: black;
     font-size: 1.2em;
     font-family: "Poppins", sans-serif;
@@ -62,10 +61,11 @@ nav a {
 
 nav a:hover {
     background-color: var(--yellow-color);
-    /* Ändrar bakgrundsfärg vid hovring */
+    /* Ändrar bakgrundsfärg vid hovring i navigationen */
     color: black;
     text-shadow: var(--medium-color) 1px 1px 1px;
     transition: 0.4s ease-in-out;
+    text-decoration-line: none;
 }
 
 nav svg {
@@ -107,12 +107,13 @@ nav svg {
         /* Lägger till skugga för att markera elementet */
         transition: 0.5s ease-out;
         /* Lägger till en övergångseffekt */
+        
     }
 
 
 
     nav a {
-        /* Bestämmer utseende för navigationen */
+        /* Bestämmer utseende för navigationen i hamburgermenyn */
         box-sizing: border-box;
         /* Inkluderar padding och border i elementets totala bredd */
         height: auto;
@@ -123,6 +124,7 @@ nav svg {
         /* Lägger till utrymme inuti länkarna */
         justify-content: flex-start;
         /* Placerar texten längst upp till vänster */
+        
     }
 
     .open-sidebar-button,
@@ -149,8 +151,16 @@ nav svg {
 }
 
 .hero-section h1 {
-    font-size: 3rem;
     margin-bottom: 20px;
+    color: var(--light-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Londrina Shadow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 2px var(--yellow-color);
+    text-transform: uppercase;
 
 }
 
@@ -164,7 +174,20 @@ nav svg {
     margin-bottom: 40px;
 }
 
+.report-section h1 {
+    font-size: 1.5rem;
+    margin: 5px
+}
+
+.report-section p {
+    font-size: 1rem;
+    margin: 8px
+}
+
+
+
 .skip-link {
+    /* */
     position: absolute;
     top: -40px;
     left: -40px;
@@ -191,12 +214,13 @@ footer {
     padding: 40px;
     text-align: left;
     font-size: 0.8rem;
-    background-color: #C9FF33;
+    background-color: var(--medium-color);
 
 }
 
 footer p {
-    color: #543dcb;
+    color: var(--yellow-color);
+    text-shadow: #000 1px 1px 1px;
 }
 
 * {
@@ -211,20 +235,19 @@ footer p {
     color: #543dcb;
 }
 
+
+
 h1 {
     /* Bestämmer utseendet för h1 rubriker på sidan */
     color: var(--light-color);
     padding: 20px;
     text-align: center;
     font-size: 3rem;
-    font-family: "Londrina Shadow", sans-serif;
-    font-weight: 400;
+    font-family: "Xanh Mono", monospace;
+    font-weight: 600;
     font-style: normal;
-    text-shadow: 2px 2px 2px var(--yellow-color);
-    text-transform: uppercase;
-
-
-
+    /*lägger en skugga runt texten*/
+    text-shadow: #000 1px 1px 1px;
 }
 
 h2 {
@@ -232,11 +255,11 @@ h2 {
     color: var(--light-color);
     text-align: center;
     padding-bottom: 20px;
-    font-size: 1.25rem;
-    font-family: "Xanh Mono", monospace;
+    font-family: "Bodoni Moda", serif;
     font-weight: 400;
     font-style: normal;
-
+    font-size: 1.1em;
+    text-shadow: #000 1px 1px 1px;
 }
 
 h3 {
@@ -262,18 +285,56 @@ p {
 
 a {
     color: #C9FF33;
-    text-decoration-style: wavy;
-
+    text-decoration-line: none;
 }
+
+a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    color: #F1CCFA;
+}
+
+.contact-methods {
+    list-style-type: square;
+    ;
+    /* Gör punkerna till fyrkanter */
+    padding: 0;
+    /* Tar bort padding runt listan */
+    margin: 25px;
+    font-family: "Poppins", sans-serif;
+    /* Anger typsnitt */
+    font-size: 1em;
+    /* Anger textstorlek */
+}
+
+.contact-methods li {
+    margin-bottom: 10px;
+    /* Lägger till mellanrum mellan listobjekten */
+}
+
+
+.contact-methods a:hover {
+    /* Lägger till understrykning vid hovring */
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    color: #F1CCFA;
+}
+
 
 
 .contact-form {
+    /* Använder Flexbox för att skapa en flexibel layout */
     display: flex;
+    /* Placerar flex-elementen i en kolumn, det vill säga under varandra */
     flex-direction: column;
+    /* Centrerar elementen horisontellt inuti flex-containern */
     justify-content: center;
+    /* Sätter en maximal bredd på 400px för formuläret, så att det inte blir för brett */
     max-width: 400px;
+    /* Centrerar elementen vertikalt inuti flex-containern */
     align-items: center;
 }
+
 
 input {
     /* Bestämmer utseendet för input elementet, där kunden kan skriva ex. email */
@@ -392,6 +453,7 @@ button:hover {
     font-weight: 300;
     font-style: normal;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
 
 }
 
