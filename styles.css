@@ -1,156 +1,120 @@
-:root {
-    /* Bestämmer färger som används på sidan, för att inte behöva kopiera in hex-kod */
+:root { /* Bestämmer färger som används på sidan, för att göra det smidigare och inte behöva kopiera in hex-kod */
     --light-color: #deff9d;
     --medium-color: #8b6aff;
     --dark-color: #543dcb;
     --yellow-color: #C9FF33;
+    --pink-color: #F1CCFA;
 }
 
-body {
-    /* Bestämmer utseendet för hela sidan */
-    margin: 0;
-    /* Tar bort marginaler runt sidan */
+body { /* Bestämmer utseendet för hela sidan */
+    margin: 0; /* Tar bort marginaler runt sidan */
     background-color: var(--light-color);
 
 }
 
-nav {
-    /* Bestämmer utseendet för navigationsfältet */
+nav { /* Bestämmer utseendet för navigationsfältet */  
     height: 60px;
     background-color: var(--medium-color);
-    display: flex;
-    /* Använder Flexbox för layout */
-    justify-content: flex-end;
-    /* Placerar elementen till höger */
-    align-items: center;
+    display: flex;/* Använder Flexbox för att placera element i navigationsfältet */
+    justify-content: flex-end;/* Placerar elementen till höger */
+    align-items: center; /* Centrerar element vertikalt */
 
 }
 
-.nav-links {
-    /* Bestämmer hur länkarna placeras i navigationsfältet*/
-    height: 100%;
-    width: 100%;
-    display: flex;
-    /* Använder Flexbox för layout */
-    flex-direction: row;
-    /* Placerar elementen i en rad */
+.nav-links { /* Bestämmer hur länkarna placeras i navigationsfältet*/
+    height: 100%; /* Tar upp hela höjden i föräldern (nav) */
+    width: 100%; 
+    display: flex; /* Använder Flexbox för att placera länkarna */
+    flex-direction: row; /* Placerar länkarna i en rad */
+   
 }
 
-nav a:first-of-type {
-    /* Placerar alla länkar förutom Startsidan åt höger, för att skilja sartsidan från övrig innehåll*/
-    margin-right: auto;
+nav a:first-of-type { 
+    margin-right: auto; /* Skapar utrymme mellan den första länken (startsidan) och övriga länkar */
 }
 
-nav a {
-    /* Bestämmer utseendet för länkarna i navigationsmenyn */
+nav a { /* Bestämmer utseendet för länkarna i navigationsmenyn */
     color: black;
     font-size: 1.2em;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    height: 100%;
-    /* Tar upp hela höjden i föräldern */
-    padding: 0 20px;
-    /* Lägger till utrymme inuti länkarna */
-    display: flex;
-    /* Använder Flexbox för layout */
+    height: 100%;   /* Tar upp hela höjden i föräldern */
+    padding: 0 20px; /* Lägger till utrymme inuti länkarna */
+    display: flex; /* Använder Flexbox för att placera innehållet i länkarna */
     align-items: center;
-    text-decoration: none;
-    /* Tar bort understrykning från länkar */
+    text-decoration: none; /* Tar bort understrykning från länkarna i navigationen */
+   
 }
 
 nav a:hover {
-    background-color: var(--yellow-color);
-    /* Ändrar bakgrundsfärg vid hovring i navigationen */
-    color: black;
-    text-shadow: var(--medium-color) 1px 1px 1px;
-    transition: 0.4s ease-in-out;
-    text-decoration-line: none;
+    background-color: var(--yellow-color); /* Ändrar bakgrundsfärg vid hovring */
+    color: black; /* Ändrar textfärg vid hovring */
+    text-shadow: var(--medium-color) 1px 1px 1px; /* Lägger till skugga på texten vid hovring */
+    transition: 0.4s ease-in-out; /* Lägger till en övergångseffekt vid hovring */
+    text-decoration-line: none; /*Tar bort textdekoration (underline)*/
 }
 
 nav svg {
-    fill: black;
-    /* Färg för SVG-ikoner, alltså hamburgermenyn och "X" knappen  */
+    fill: black; /* Färg för SVG-ikoner, alltså hamburgermenyn och "X" knappen */
+    
 }
 
 #sidebar-active {
-    display: none;
-    /* Gömmer checkboxen */
+    display: none; /* Gömmer checkboxen som styr sidomenyn */ 
 }
 
 .open-sidebar-button,
 .close-sidebar-button {
-    display: none;
-    /* Gömmer knapparna för att öppna och stänga sidomenyn */
+    display: none; /* Gömmer knapparna för att öppna och stänga sidomenyn */
 }
 
-@media (max-width: 710px) {
-
-    /* Anpassar layouten för mindre skärmar */
+@media (max-width: 710px) {  /* Anpassar layouten för mindre skärmar */
     .nav-links {
-        flex-direction: column;
-        /* Placerar elementen i en kolumn */
-        align-items: flex-start;
-        /* Placerar elementen längst upp till vänster */
-        position: fixed;
-        /* Fixerar elementet på sidan */
-        top: 0;
-        /* Placerar elementet längst upp på sidan */
-        right: -100%;
-        /* Flyttar elementet utanför synfältet */
-        z-index: 10;
-        /* Placerar elementet ovanför andra element */
-        width: 200px;
-        /* Anger bredden på elementet */
-        background-color: var(--medium-color);
-        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-        /* Lägger till skugga för att markera elementet */
-        transition: 0.5s ease-out;
-        /* Lägger till en övergångseffekt */
+        flex-direction: column; /* Placerar element i en kolumn */
+        align-items: flex-start; /* Placerar element längst upp till vänster */
+        position: fixed; /* Fixerar elementet på sidan */
+        top: 0; /* Placerar elementet längst upp på sidan */
+        right: -100%; /* Flyttar elementet utanför synfältet */
+        z-index: 10; /* Placerar elementet ovanför andra element */
+        width: 200px; /* Anger bredden på elementet */
+        background-color: var(--medium-color); /* Bakgrundsfärg för hamburgermenyn */
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25); /* Lägger till skugga för att markera elementet */
+        transition: 0.5s ease-out; /* Lägger till en övergångseffekt */
         
     }
 
 
 
     nav a {
-        /* Bestämmer utseende för navigationen i hamburgermenyn */
-        box-sizing: border-box;
-        /* Inkluderar padding och border i elementets totala bredd */
-        height: auto;
-        /* Tillåter höjden att anpassas efter innehållet */
-        width: 100%;
-        /* Tar upp hela bredden i föräldern */
-        padding: 20px 30px;
-        /* Lägger till utrymme inuti länkarna */
-        justify-content: flex-start;
-        /* Placerar texten längst upp till vänster */
+        box-sizing: border-box; /* Inkluderar padding och border i elementets totala bredd */
+        height: auto; /* Tillåter höjden att anpassas efter innehållet */
+        width: 100%; /* Tar upp hela bredden i föräldern */
+        padding: 20px 30px; /* Lägger till utrymme inuti länkarna */
+        justify-content: flex-start; /* Placerar texten längst upp till vänster */
         
     }
 
     .open-sidebar-button,
     .close-sidebar-button {
-        display: block;
-        /* Visar knapparna för att öppna och stänga sidomenyn */
+        display: block; /* Visar knapparna för att öppna och stänga sidomenyn */
         padding: 20px;
 
     }
 
     #sidebar-active:checked~.nav-links {
-        right: 0;
-        /* Flyttar elementet in i synfältet när det är aktivt */
+        right: 0;  /* Flyttar elementet in i synfältet när det är aktivt */
+       
     }
 }
 
 .hero-section {
-    background: url(images/unsplash.jpg);
-    /*bilden är tagen från unsplash.com under deras gratis bilder*/
-    color: white;
-    text-align: center;
+    background: url(images/unsplash.jpg);   /* Bilden är tagen från unsplash.com under deras gratis bilder*/
+    text-align: center; /* Centrerar texten*/
     padding: 100px 20px;
-    opacity: 80%;
 }
 
-.hero-section h1 {
+.hero-section h1 { /* Bestämmer utseendet för <h1> rubriker som endast används i detta avsnitt*/
     margin-bottom: 20px;
     color: var(--light-color);
     padding: 20px;
@@ -159,27 +123,27 @@ nav svg {
     font-family: "Londrina Shadow", sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-shadow: 2px 2px 2px var(--yellow-color);
-    text-transform: uppercase;
+    text-shadow: 2px 2px 2px var(--yellow-color); /* Lägger till skugga runt texten*/
+    text-transform: uppercase; /* Gör alla bokstäver till versaler*/
 
 }
 
-.hero-section h2 {
+.hero-section h2 {/* Bestämmer utseendet för <h2> rubriker som endast används i hero avsnittet*/
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.hero-section p {
+.hero-section p { /* Bestämmer utseendet för <p> som endast används hero avsnittet*/
     font-size: 1.25rem;
     margin-bottom: 40px;
 }
 
-.report-section h1 {
+.report-section h1 { /* Bestämmer utseendet för <h1> rubriker som endast används i tillgänglighetsredogörelsens avsnitt*/
     font-size: 1.5rem;
     margin: 5px
 }
 
-.report-section p {
+.report-section p { /* Bestämmer utseendet för <p> rubriker som endast används i tillgänglighetsredogörelsens avsnitt*/
     font-size: 1rem;
     margin: 8px
 }
@@ -187,8 +151,7 @@ nav svg {
 
 
 .skip-link {
-    /* */
-    position: absolute;
+    position: absolute; /* Placerar länken absolut i förhållande till närmaste positionerade föräldern */
     top: -40px;
     left: -40px;
     background: #000;
@@ -202,15 +165,14 @@ nav svg {
     left: 0;
 }
 
-main {
-    /* Bestämmer utseendet för main elementet*/
+main { /* Bestämmer utseendet för main elementet*/
     padding: 40px;
-    text-align: left;
+    text-align: left; /* Vänsterjusterad text */
     font-size: 0.8rem;
 
 }
 
-footer {
+footer { /* Bestämmer utseendet för footer elementet*/
     padding: 40px;
     text-align: left;
     font-size: 0.8rem;
@@ -218,27 +180,25 @@ footer {
 
 }
 
-footer p {
+footer p { /* Ändrar <p> endast i footer*/
     color: var(--yellow-color);
     text-shadow: #000 1px 1px 1px;
 }
 
-* {
-    /* Bestämmer utseendet för hela sidan */
+* {   /* Bestämmer utseendet för hela sidan */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* Inkluderar padding och border i elementets totala bredd */
+    box-sizing: border-box; /* Inkluderar padding och border i elementets totala bredd */
 }
 
-.contact-header {
-    color: #543dcb;
+.contact-header { /* Bestämmer utseendet för titeln på konaktsidan*/
+    color: var(--dark-color);
+    text-shadow: black 1px 1px 1px;
 }
 
 
 
-h1 {
-    /* Bestämmer utseendet för h1 rubriker på sidan */
+h1 { /* Bestämmer utseendet för <h>1 rubriker på sidan */
     color: var(--light-color);
     padding: 20px;
     text-align: center;
@@ -246,12 +206,10 @@ h1 {
     font-family: "Xanh Mono", monospace;
     font-weight: 600;
     font-style: normal;
-    /*lägger en skugga runt texten*/
     text-shadow: #000 1px 1px 1px;
 }
 
-h2 {
-    /* Bestämmer utseendet för h2 rubriker på sidan */
+h2 { /* Bestämmer utseendet för <h2> rubriker på sidan */
     color: var(--light-color);
     text-align: center;
     padding-bottom: 20px;
@@ -262,8 +220,7 @@ h2 {
     text-shadow: #000 1px 1px 1px;
 }
 
-h3 {
-    /* Bestämmer utseendet för h3 rubriker på sidan */
+h3 { /* Bestämmer utseendet för <h3> rubriker på sidan */
     color: var(--light-color);
     font-size: 1.5em;
     font-family: "Xanh Mono", monospace;
@@ -273,8 +230,7 @@ h3 {
     text-align: center;
 }
 
-p {
-    /* Bestämmer utseendet för paragrafer på sidan */
+p { /* Bestämmer utseendet för <p> på sidan */
     color: white;
     font-size: 1em;
     font-family: "Poppins", sans-serif;
@@ -283,33 +239,27 @@ p {
     margin-bottom: 20px;
 }
 
-a {
+a { /* Bestämmer utseendet för alla länkar*/
     color: #C9FF33;
     text-decoration-line: none;
 }
 
-a:hover {
+a:hover { /* Bestämmer utseendet vid hoverfunktion av länkar*/
     text-decoration-line: underline;
     text-decoration-style: wavy;
-    color: #F1CCFA;
+    color: var(--pink-color);
 }
 
 .contact-methods {
-    list-style-type: square;
-    ;
-    /* Gör punkerna till fyrkanter */
+    list-style-type: square; /* Gör punkerna till fyrkanter */
     padding: 0;
-    /* Tar bort padding runt listan */
     margin: 25px;
     font-family: "Poppins", sans-serif;
-    /* Anger typsnitt */
     font-size: 1em;
-    /* Anger textstorlek */
 }
 
 .contact-methods li {
-    margin-bottom: 10px;
-    /* Lägger till mellanrum mellan listobjekten */
+    margin-bottom: 10px; /* Lägger till mellanrum mellan listobjekten */
 }
 
 
@@ -323,21 +273,15 @@ a:hover {
 
 
 .contact-form {
-    /* Använder Flexbox för att skapa en flexibel layout */
-    display: flex;
-    /* Placerar flex-elementen i en kolumn, det vill säga under varandra */
-    flex-direction: column;
-    /* Centrerar elementen horisontellt inuti flex-containern */
-    justify-content: center;
-    /* Sätter en maximal bredd på 400px för formuläret, så att det inte blir för brett */
-    max-width: 400px;
-    /* Centrerar elementen vertikalt inuti flex-containern */
-    align-items: center;
+    display: flex;  /* Använder Flexbox för att skapa en flexibel layout */
+    flex-direction: column; /* Placerar flex-elementen i en kolumn, det vill säga under varandra */
+    justify-content: center; /* Centrerar elementen horisontellt inuti flex-containern */
+    max-width: 400px;  /* Sätter en maximal bredd på 400px för formuläret, så att det inte blir för brett */
+    align-items: center; /* Centrerar elementen vertikalt inuti flex-containern */
 }
 
 
-input {
-    /* Bestämmer utseendet för input elementet, där kunden kan skriva ex. email */
+input {  /* Bestämmer utseendet för input elementet, där kunden kan skriva ex. email */
     background-color: white;
     width: 100%;
     font-size: 1em;
@@ -352,8 +296,7 @@ input {
 
 }
 
-textarea {
-    /* Bestämmer utseende för textområdet, där kunden förklarar vad de behvöer hjälp med */
+textarea {  /* Bestämmer utseende för textområdet, där kunden förklarar vad de behvöer hjälp med */
     background-color: white;
     width: 100%;
     padding: 16px;
@@ -369,54 +312,44 @@ textarea {
 }
 
 input:focus-within,
-textarea:focus-within {
-    /* Ändrar utseendet vid fokusering av de olika elementen i kontaktfomruläret */
-    outline: none;
-    /* Tar bort konturen när elementet är fokuserat */
-    border-color: black;
-    /* Ändrar border färgen vid fokus */
+textarea:focus-within {  /* Ändrar utseendet vid fokusering av de olika elementen i kontaktfomruläret */
+    outline: none; /* Tar bort konturen när elementet är fokuserat */
+    border-color: black; /* Ändrar border färgen vid fokus */
 }
 
-.submit-button {
-    align-self: baseline;
-}
 
 button {
-    /*Bestämmer utseende för knappen i kontaktformuläret*/
+    /*Bestämmer utseendet och placeringen för "skicka" knappen i kontaktformuläret*/
     background-color: var(--dark-color);
     color: white;
     font-size: 1em;
-    border-radius: 10px;
+    border-radius: 10px; /* Rundar av hörnen på knappen*/
     padding: 8px 18px;
     text-align: center;
     display: flex;
-    /* Använder Flexbox för layout */
     border-color: black;
     border-width: 3px;
+    align-self: baseline; /* Justerar knappens position i förhållande till andra element */
+    text-transform: uppercase;
+    font-family: 'Xanh Mono', sans-serif;
 
 }
 
 button:hover {
-    opacity: 60%;
-    /* Minskar genomskinligheten vid hovring */
-    cursor: pointer;
-    /* Ändrar muspekaren till en pekare */
+    opacity: 60%; /* Minskar genomskinligheten vid hovring */
+    cursor: pointer;    /* Ändrar muspekaren till en pekare */
 }
 
-.grid-container {
-    /* Bestämmer utseendet för grid-container där korten och bilderna presenteras */
-    display: grid;
-    /* Använder CSS Grid för layout för att presentera textinnehållet */
-    grid-template-columns: 1fr 1fr;
-    /* Skapar två lika stora kolumner */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+.grid-container { /* Bestämmer utseendet för grid-container där korten och bilderna presenteras */
+    display: grid;  /* Använder CSS Grid för layout för att presentera textinnehållet */
+    grid-template-columns: 1fr 1fr; /* Skapar två lika stora kolumner */
+    gap: 20px; /* Lägger till utrymme mellan grid-elementen */
+    justify-content: center; /* Centrerar elementen horisontellt */
+    align-items: center; /* Centrerar elementen vertikalt */
 
 }
 
-.flex-container {
-    /* Bestämmer hur och vart bilderna visas */
+.flex-container { /* Bestämmer hur och vart bilderna visas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -424,28 +357,23 @@ button:hover {
 
 }
 
-.image-item {
-    /*Bestämmer utseende runt om bilderna*/
+.image-item {  /*Bestämmer utseende runt om bilderna*/
     display: flex;
-    /* Använder Flexbox för layout */
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centrerar elementen horisontellt */
+    justify-content: center; /* Centrerar elementen vertikalt */
     padding: 20px;
     margin: 20px;
     background-color: var(--dark-color);
-    border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 20px; /* Rundar av hörnen*/
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* Lägger till skugga runt boxarna*/
 
 }
 
-.card {
-    /*Bestämmer utseende för korten där information presenteras*/
+.card { /*Bestämmer utseende för korten där information presenteras*/
     padding: 20px;
     margin: 20px;
     background-color: #543dcb;
-    /* Bestämmer färg och bredd på borden */
     border-radius: 20px;
-    /* Rundar av hörnen */
     text-align: left;
     font-size: 1.5em;
     color: white;
@@ -458,24 +386,31 @@ button:hover {
 }
 
 .card p {
-    margin-bottom: 20px;
-    /* Lägger till mellanrum under varje stycke, istället för <br> element i HTML koden */
+    margin-bottom: 20px;  /* Lägger till mellanrum under varje stycke, istället för <br> element i HTML koden */
 }
 
 
 
-@media (max-width: 710px) {
-
-    /* Anpassar layouten för mindre skärmar via en brytpunkt */
+@media (max-width: 710px) {  /* Anpassar layouten för mindre skärmar via en brytpunkt */
     .grid-container {
-        grid-template-columns: 1fr;
-        /* Ändrar till en kolumn */
+        grid-template-columns: 1fr;  /* Ändrar till en kolumn */
     }
 }
 
-/*För att göra denna CSS har jag tagit del av föreläsningar, artiklar och youtube videos
+/*För att skapa denna CSS har jag tagit del av föreläsningar, artiklar, w3shcools och youtube videos. Nedan följer länkar som har varit speciellt användbara*/
 
 
-Denna sida har jag inhämtat infromation om hur man dekorerar länkar
-https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line*/
+/*Denna sida har jag inhämtat infromation om hur man dekorerar länkar:
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line   */
+
+/*Denna artikel/tutorial har jag inhämtat information om flexbox:
+https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/   */
+
+/*Denna youtube tutorial har jag inhämtat infromation om hur man bygger navigation och hamburgermeny:
+https://youtu.be/8eFeIFKAKHw?si=X-daJfPgP69vFzSK */
+
+/* Jag insåg i efterhand att jag borde lagt till mina fonter i :root, som jag gjorde med färgerna. En lärdom jag tar med mig till nästa kodning.*/
+
+
+
 
