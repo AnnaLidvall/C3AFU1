@@ -17,11 +17,11 @@
 
 <body>
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <!-- Navigationsfältet -->
     <nav>
-        <!-- Navigationsfältet -->
-        <input type="checkbox" id="sidebar-active">
-        <!-- Dold checkbox för att hantera visning av sidomenyn -->
-        <label for="sidebar-active" class="open-sidebar-button">
+        <!-- Dold checkbox för att hantera sidebar, aria-hidden för att dölja element för användare med funktionsnedsättningar -->
+        <input type="checkbox" id="sidebar-active" aria-hidden="true">
+        <label for="sidebar-active" class="open-sidebar-button" aria-label="Open Menu">
             <!-- Knapp för att öppna sidomenyn -->
             <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e3e3e3">
                 <!-- SVG-ikon för hamburgarmeny -->
@@ -41,7 +41,7 @@
             </label>
 
             <!-- Navigationslänkar -->
-            <a href="index.html">Startsida</a>
+            <a href="index.html" class="active">Startsida</a>
             <a href="about.html">Om oss</a>
             <a href="contact.html">Kontakt</a>
             <a href="report.html">Tillgänglighet</a>
@@ -62,23 +62,23 @@
               <!-- Textkort med information -->
             <div class="card">
                 <h3>Vi designar din vision</h3>
-                <p>Vi på Ethereal Studios strävar efter att skapa den bästa möjliga upplevelsen för våra kunder. Vi erbjuder en rad olika tjänser, från User Experince Design och interaktionsdesign till textproducering och illustrationer. Vårt team finns här för att hjälpa dig realisera din vision.</p>
+                <p>Vi på Ethereal Studios strävar efter att skapa den bästa möjliga upplevelsen för våra kunder. Vi erbjuder en rad olika tjänser, från User Experience Design och interaktionsdesign till textproducering och illustrationer. Vårt team finns här för att hjälpa dig realisera din vision.</p>
             </div>
             <!-- Behållare för bilder -->
             <div class="flex-container">
                 <!--Bilden är tagen från Canva premium och mailpulerad med deras verktyg-->
-                <img class="image-item" src="images/kund.jpg" alt="Ethereal Studios gjorde en fantastisk webbplats för min e-handel! Jag är väldigt nöjd med resultatet. Rekommenderas varmt">
+                <img class="image-item" src="images/kund.jpg" alt="Nöjd kund som berömmer Ethereal Studios tjänster">
             </div>
         </div>
         <div class="grid-container">
             <div class="flex-container">
                 <!--Bilden är tagen från Canva premium och mailpulerad med deras verktyg-->
-                <img class="image-item" src="images/konsultation.jpg" alt="en bild med texten kontakta oss gära för en gratis konsultation">
+                <img class="image-item" src="images/konsultation.jpg" alt="Kontakta oss gära för en gratis konsultation">
             </div>
             <div class="card">
                 <!--classen för boxarna/korten där textinnehållet representeras, för att kunna styla i CSS -->
                 <h3>Tillgänglighet i design</h3>
-                <p>För oss spelar tillgänglighet en stor roll och vi utgår alltid från WCAG:s <a  href="https://www.w3.org/TR/WCAG21/" lang="eng">(Web Content Accessibility Guidelines)</a> riktlinjer för att säkerställa en tillgänslighetsanpassad design. Detta för att så många som möjligt ska kunna ta del av det vi designar.</p>
+                <p>För oss spelar tillgänglighet en stor roll och vi utgår alltid från WCAG:s <a  href="https://www.w3.org/TR/WCAG21/" lang="eng">(Web Content Accessibility Guidelines)</a> riktlinjer för att säkerställa en tillgänglighetsanpassad design. Detta för att så många som möjligt ska kunna ta del av det vi designar.</p>
             </div>
         </div>
     </main>

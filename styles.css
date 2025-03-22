@@ -110,6 +110,8 @@ nav svg {
 
 .hero-section {
     background: url(images/unsplash.jpg);   /* Bilden är tagen från unsplash.com under deras gratis bilder*/
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center; /* Centrerar texten*/
     padding: 100px 20px;
 }
@@ -248,6 +250,12 @@ a:hover { /* Bestämmer utseendet vid hoverfunktion av länkar*/
     text-decoration-line: underline;
     text-decoration-style: wavy;
     color: var(--pink-color);
+}
+
+/* Stil för den aktiva länken */
+.nav-links a.active {
+    background-color: var(--light-color); /* Ändrar bakgrundsfärg för den aktiva länken */
+    color: black; /* Ändrar textfärg för den aktiva länken */
 }
 
 .contact-methods {
